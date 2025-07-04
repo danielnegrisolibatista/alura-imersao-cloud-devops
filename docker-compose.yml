@@ -1,0 +1,13 @@
+# Define os serviços (contêineres) da sua aplicação.
+services:
+  app:
+    # Constrói a imagem a partir do Dockerfile no diretório atual ('.')
+    build: .
+    container_name: ellis_api
+    # Mapeia a porta 8000 do contêiner para a porta 8000 da sua máquina.
+    ports:
+      - "8000:8000"
+    # Monta o diretório atual dentro do contêiner em /app.
+    # Isso permite que as alterações no código sejam refletidas instantaneamente.
+    volumes:
+      - .:/app
